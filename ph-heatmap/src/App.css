@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.DateSquare{
+  width: 15px; 
+  height: 15px; 
+  border-radius: 25%; 
+  margin: 4px; 
+  position: absolute;
+  transition: all 0.06s;
+}
+
+.DateSquare:hover{
+  transform: scale(1.25);
+}
