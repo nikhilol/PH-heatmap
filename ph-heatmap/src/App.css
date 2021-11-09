@@ -38,10 +38,7 @@
 }
 
 .DateSquare{
-  width: 15px; 
-  height: 15px; 
-  border-radius: 25%; 
-  margin: 4px; 
+  border-radius: 20%; 
   position: absolute;
   transition: all 0.06s;
 }
