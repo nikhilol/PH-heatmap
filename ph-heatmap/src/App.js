@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
+import Square from "./Square";
 
 const dummy_data = [
 {img:'https://ph-files.imgix.net/c6d53ac5-426b-45fa-aada-b291819e61a0.gif', url:'https://cards.producthunt.com/cards/posts/318000?v=1', date:'30/10/2021'},
@@ -40,21 +41,29 @@ function App() {
   }
 
 	return (
-    <div className="App" style={{display:'flex', width:'100vw', height:'100vh', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-		<h1 style={{}}>TEST PODUCT HUNT 365</h1>
-		<div style={{display:'flex', justifyContent:'center', width:'100vw', alignItems:'center', height:'30vh'}}>
+    <div className="App" style={{display:'flex', width:'100vw', height:'auto', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+		<div>
+			<img width='75px' src='/PHLogo.png'></img>
+			<img width='75px' src='/me.jpg' style={{borderRadius:'50%', marginLeft:'-3vh'}}></img>
+		</div>
+		<h1 style={{borderBottom:'1px solid #e5e5e5', color:'#DA552F', padding:'2vh'}}>My Product Hunt <span style={{color:'white', background:'#DA552F', borderRadius:'2px', padding:'2px 5px'}}>365</span></h1>
+		<p style={{width:'40%', fontWeight:'bold'}}>👋Hey! I'm Nikhil, welcome!</p>
+		<p style={{width:'40%', fontWeight:'bold'}}>The idea for this project is to build a Github style heatmap of my favourite products every day for a year! I will also be posting every choice I make on <a href='https://twitter.com/Niikhiil_P'>Twitter</a>, so follow me there!</p>
+		<div style={{display:'flex', width:'100vw', justifyContent:'center', alignItems:'flex-start', height: 7*multiplier+'vw'}}>
+			<div>
 			{daysOfYear.length === 365 && (
-				<div style={{position:'relative'}}>
+				<div style={{position:'relative', height:4.55*multiplier+'vw', width: 53*multiplier + 'vw'}}>
 					{daysOfYear.map((date, i) => {
             			let index = i + daysOfYear[0].getDay()
-						return (<div className='DateSquare' style={{width: multiplier * 0.65 + 'vw', height:multiplier * 0.65 + 'vw', top:(index%7)*multiplier + 'vw', left:Math.floor(index/7)*multiplier + 'vw', backgroundImage:`url(${date.img ? date.img :  ''})`,  border:'2px solid #e5e5e5', backgroundRepeat: 'no-repeat', backgroundSize:'cover', backgroundColor:'#e2e2e2', transform:`translate(-${multiplier * 26.5 + 'vw'}, -${multiplier * 3.5 + 'vw'})` }} onMouseOver={()=>setActive(i)}></div>);
+						return (<Square multiplier={multiplier} date={date} i={i} index={index} setActive={setActive}></Square>);
 					})}
 				</div>
 			)}
+			</div>
 		</div>
-		<div style={{border:'1px solid #e5e5e5', borderRadius:'2%', margin:'0 0vh', height:'auto'}}>
+		<div style={{border:'1px solid #e5e5e5', borderRadius:'2%'}}>
 			{daysOfYear[active] &&
-				<iframe width="1000" height="600" frameborder="0" style={{}} title='t' src={daysOfYear[active]['url']}></iframe>
+				<iframe width="1000" height={window.innerHeight * 0.5} frameborder="0" style={{}} title='t' src={daysOfYear[active]['url']}></iframe>
 			}
 		</div>
     </div>

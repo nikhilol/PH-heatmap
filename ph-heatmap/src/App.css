@@ -1,3 +1,6 @@
+*{
+  font-family: 'Montserrat';
+}
 .App {
   text-align: center;
 }
@@ -38,11 +41,16 @@
 }
 
 .DateSquare{
-  border-radius: 20%; 
-  position: absolute;
+  border-radius: 20%;
+  position: absolute; 
   transition: all 0.06s;
 }
 
 .DateSquare:hover{
   transform: scale(1.25);
+}
+
+a{
+  text-decoration: none;
+  color: #61dafb;
 }
