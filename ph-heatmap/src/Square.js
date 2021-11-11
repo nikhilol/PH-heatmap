@@ -17,6 +17,7 @@ function Square(props) {
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
 				backgroundColor: "#333E56",
+				animationDelay: (Math.floor(props.index / 7) + props.index % 7) * 50 + 'ms'
 			}}
 			onClick={() => props.setActive(props.i)}
 		></div>
