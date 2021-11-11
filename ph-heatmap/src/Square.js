@@ -1,5 +1,8 @@
 import React from 'react'
+
 function Square(props) {
+    console.log('top:', (props.index % 7) * props.multiplier)
+    console.log('left:', Math.floor(props.index / 7) * props.multiplier)
 	return (
 		<div
 			className="DateSquare"
@@ -9,7 +12,7 @@ function Square(props) {
 				height: props.multiplier * 0.65 + "vw",
 				top: (props.index % 7) * props.multiplier + "vw",
 				left: Math.floor(props.index / 7) * props.multiplier + "vw",
-				backgroundImage: `url(${props.date.img ? props.date.img : ""})`,
+				backgroundImage: `url(${props.data.img ? props.data.img : ""})`,
 				// border: "2px solid #333E56",
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
