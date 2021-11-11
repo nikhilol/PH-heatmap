@@ -3,18 +3,19 @@ function Square(props) {
 	return (
 		<div
 			className="DateSquare"
+			id={'square'+props.i}
 			style={{
 				width: props.multiplier * 0.65 + "vw",
 				height: props.multiplier * 0.65 + "vw",
 				top: (props.index % 7) * props.multiplier + "vw",
 				left: Math.floor(props.index / 7) * props.multiplier + "vw",
 				backgroundImage: `url(${props.date.img ? props.date.img : ""})`,
-				border: "2px solid #e5e5e5",
+				// border: "2px solid #333E56",
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
-				backgroundColor: "#e2e2e2",
+				backgroundColor: "#333E56",
 			}}
-			onMouseOver={() => props.setActive(props.i)}
+			onClick={() => props.setActive(props.i)}
 		></div>
 	);
 }

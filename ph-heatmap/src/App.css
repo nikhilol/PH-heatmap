@@ -1,8 +1,13 @@
 *{
   font-family: 'Montserrat';
 }
+p{
+  font-size: large;
+}
 .App {
   text-align: center;
+  background-color: #1A202C;
+  color: #c5d7ff
 }
 
 .App-logo {
@@ -27,10 +32,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -43,14 +44,15 @@
 .DateSquare{
   border-radius: 20%;
   position: absolute; 
-  transition: all 0.06s;
+  transition: all 0.08s;
+  animation-timing-function: ease-out;
 }
 
 .DateSquare:hover{
-  transform: scale(1.25);
+  transform: scale(1.5);
 }
 
 a{
   text-decoration: none;
-  color: #61dafb;
+  color: #00C6E0;
 }
