@@ -51,6 +51,7 @@ app.post("/submission", async (req, res) => {
         firebase.firestore().collection('Dates').doc(new Date().toLocaleDateString("en-GB").replace("/", " ").replace("/", " ")).set({
             id: id,
             img: data.post.thumbnail.url.split('?')[0],
+			url: `https://cards.producthunt.com/cards/posts/${id}?v=1`,
             topics: data.post.topics.edges.map(edge=>edge.node.name),
             date: new Date()
         })
