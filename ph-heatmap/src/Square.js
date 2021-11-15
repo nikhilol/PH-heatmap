@@ -1,8 +1,6 @@
 import React from 'react'
 
 function Square(props) {
-    console.log('top:', (props.index % 7) * props.multiplier)
-    console.log('left:', Math.floor(props.index / 7) * props.multiplier)
 	return (
 		<div
 			className="DateSquare"
@@ -17,7 +15,8 @@ function Square(props) {
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
 				backgroundColor: "#333E56",
-				animationDelay: (Math.floor(props.index / 7) + props.index % 7) * 50 + 'ms'
+				animationDelay: (Math.floor(props.index / 7) + props.index % 7) * 50 + 'ms',
+  				cursor: props.data.img ? 'pointer' : 'cursor'
 			}}
 			onClick={() => props.setActive(props.i)}
 		></div>

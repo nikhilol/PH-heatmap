@@ -9,7 +9,6 @@ p{
   background-color: #1A202C;
   color: #c5d7ff
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -76,4 +75,14 @@ a{
   100% {
     transform: scale(1);
   }
+}
+
+iframe{
+  border: none;
+  padding: 2vh;
+  border-radius: 2%;
+}
+
+.css-3bmhjh-MuiPaper-root-MuiPopover-paper{
+  background-color: transparent !important;
 }
