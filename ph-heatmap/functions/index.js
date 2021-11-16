@@ -83,11 +83,11 @@ app.post("/submission", async (req, res) => {
 	let str = ''
 	makers.map(maker=>{
 		if(maker.twitterUsername != null){
-			str += ' @' +  maker.twitterUsername
+			str += ' @' +  maker.twitterUsername + ' '
 		}
 	});
-	let _status = `🐱 My Product Hunt 365 selection today is...\n\n${data.post.name}!! 🥳\n\nHave a look at ${data.post.name}'s @ProductHunt listing along with all of my other selections over at https://ph-365.web.app\n\n
-	Big congratulations to ${str.length ? str : 'another #IndieMaker!'}`
+	let _status = `🐱 I collecting my favourite @ProductHunt listing of every single day! My selection today is...\n\n${data.post.name}!! 🥳\n\nHave a look at ${data.post.name}'s listing along with all of my other selections over at https://ph-365.web.app\n\n
+	Big congratulations to ${str.length ? str : 'another #IndieMaker'}!`
 	
 	client.post('statuses/update', {status: _status},  function(error, tweet, response) {
 		if(error) throw error;
