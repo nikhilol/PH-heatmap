@@ -86,7 +86,7 @@ app.post("/submission", async (req, res) => {
 			str += ' @' +  maker.twitterUsername + ' '
 		}
 	});
-	let _status = `🐱 I collecting my favourite @ProductHunt listing of every single day! My selection today is...\n\n${data.post.name}!! 🥳\n\nHave a look at ${data.post.name}'s listing along with all of my other selections over at https://ph-365.web.app\n\n
+	let _status = `🐱 I'm collecting my favourite @ProductHunt listing of every single day! My selection today is...\n\n${data.post.name}!! 🥳\n\nHave a look at ${data.post.name}'s listing along with all of my other selections over at https://ph-365.web.app\n\n
 	Big congratulations to ${str.length ? str : 'another #IndieMaker'}!`
 	
 	client.post('statuses/update', {status: _status},  function(error, tweet, response) {
@@ -100,7 +100,7 @@ app.post("/submission", async (req, res) => {
 
 app.get('/dates', async (req, res)=>{
     let arr = []
-    await firebase.firestore().collection('Dates').orderBy("id", "asc").get().then(snap=>{
+    await firebase.firestore().collection('Dates').orderBy("date", "desc").get().then(snap=>{
         snap.forEach(doc=>{
             arr.push(doc.data())
         })
